@@ -10,7 +10,11 @@ async function main() {
       [350, 200, 300],
       [500, 500, 500],
       [25, 50, 75],
-      [100, 75, 25]
+      [100, 75, 25],
+      "Joker",
+      "https://i.ibb.co/4YdhnLh/joker.jpg",
+      10000,
+      50
   );
 
   await epicGame.deployed();
@@ -19,8 +23,11 @@ async function main() {
   let txn = await epicGame.mintCharNFT(2); //mint Naruto from array
   await txn.wait();
 
-  let returnedUri = await epicGame.tokenURI(1); //show Naruto _tokenId = 1
-  console.log("Token URI: ", returnedUri);
+  txn = await epicGame.attackBoss();
+  await txn.wait();
+
+  txn = await epicGame.attackBoss();
+  await txn.wait();
 
 }
 
