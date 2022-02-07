@@ -41,7 +41,7 @@ contract EpicGame is ERC721 {
     mapping(uint256 => CharAttributes) public nftHolderAttributes;
     mapping(address => uint256) public nftHolders;
 
-    event CharacterNFTMined(address sender, uint256 tokenId, uin256 characterIndex);
+    event CharacterNFTMined(address sender, uint256 tokenId, uint256 characterIndex);
     event AttackComplete(uint newBossHp, uint newPlayerHp);
 
     constructor(
@@ -168,7 +168,7 @@ contract EpicGame is ERC721 {
         // If the user has a tokenId in the map, return their character.
         /*Why do we do userNftTokenId > 0? Well, basically there's no way to check if a key in a map exists. We set up our map like this: mapping(address => uint256) public nftHolders. No matter what key we look for, there will be a default value of 0.
         This is a problem for user's with NFT tokenId of 0. That's why earlier, I did _tokenIds.increment() in the constructor! That way, no one is allowed to have tokenId 0. This is one of those cases where we need to be smart in how we set up our code because of some of the quirks of Solidity :).*/
-        if (userNftToken > 0) {
+        if (userNftTokenId > 0) {
             return nftHolderAttributes[userNftTokenId];
         }
         // Else, return an empty character.
@@ -190,5 +190,5 @@ contract EpicGame is ERC721 {
 
 /*
 1) 0xE8036b6b27d0Db0aB3fAe822C9d88c1D3C84341D
-2) test attack:
+2) test attack: 0xd613319068DeeABaA32b28f10d0672c59709e42F
 */

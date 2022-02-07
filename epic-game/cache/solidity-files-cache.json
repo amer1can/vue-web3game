@@ -74,8 +74,8 @@
       ]
     },
     "C:\\_code\\__smart_contracts\\project_game\\epic-game\\contracts\\EpicGame.sol": {
-      "lastModificationDate": 1644048701789,
-      "contentHash": "567dfee825bbbca27cbff9e71009bd48",
+      "lastModificationDate": 1644218308460,
+      "contentHash": "de774d46412dce4af6f7adef14f4fac7",
       "sourceName": "contracts/EpicGame.sol",
       "solcConfig": {
         "version": "0.8.4",
