@@ -186,9 +186,15 @@ contract EpicGame is ERC721 {
         return bigBoss;
     }
 
+    function donateHpCharacter(uint _charIndex) public {
+        defaultCharacters[_charIndex].hp += 300;
+        console.log('Donate successfully done: character %s have %s HP', defaultCharacters[_charIndex].name, defaultCharacters[_charIndex].hp );
+    }
+
 }
 
 /*
 1) 0xE8036b6b27d0Db0aB3fAe822C9d88c1D3C84341D
 2) test attack: 0xd613319068DeeABaA32b28f10d0672c59709e42F
+3) with donate: 0x99533Ff26719A5159E0087E273915840237D8b83
 */
